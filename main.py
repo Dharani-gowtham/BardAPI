@@ -5,7 +5,7 @@ import requests
 
 # set your __Secure-1PSID value to key
 os.environ['BARD_API_KEY'] = 'ZAgjbF2rSZndOG-p48Y6qt-7zWBFD4AX9FL5WaGHeaEWPtQPPUUXpPmorUuevfy0OqeTKg.'
-token = 'ZAgjbF2rSZndOG-p48Y6qt-7zWBFD4AX9FL5WaGHeaEWPtQPPUUXpPmorUuevfy0OqeTKg.'
+token = 'xxxxx'
 
 session = requests.Session()
 session.headers = {
