@@ -5,7 +5,7 @@ import requests
 
 # set your __Secure-1PSID value to key
 os.environ['BARD_API_KEY'] = 'ZAgjbF2rSZndOG-p48Y6qt-7zWBFD4AX9FL5WaGHeaEWPtQPPUUXpPmorUuevfy0OqeTKg.'
-token = 'xxxxx'
+token = 'ZAgjbF2rSZndOG-p48Y6qt-7zWBFD4AX9FL5WaGHeaEWPtQPPUUXpPmorUuevfy0OqeTKg.'
 
 session = requests.Session()
 session.headers = {
@@ -17,7 +17,8 @@ session.headers = {
             "Origin": "https://bard.google.com",
             "Referer": "https://bard.google.com/",
         }
-session.cookies.set("__Secure-1PSID", os.getenv("_BARD_API_KEY"))
+session.cookies.set("__Secure-1PSID", os.getenv(token))
+bard = Bard(token= token)
 
 # set your input text
 input_text = st.text_input("Enter the query to search in bard")
@@ -25,7 +26,7 @@ button = st.button("Search")
 # Send an API request and get a response.
 
 if button:
-    bard = Bard(token=token, session=session, timeout=60)
+
     result = bard.get_answer(input_text)['content']
     # response = bardapi.core.Bard(token).get_answer(input_text)
     # st.write(response['content'])
